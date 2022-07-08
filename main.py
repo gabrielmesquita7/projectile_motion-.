@@ -211,7 +211,14 @@ def animação():
     plt.axvline(0, color='black')
     plt.xlabel('Distancia(x) m')
     plt.ylabel('Distancia(y) m')
-    plt.axis([0, r+r/5, 0, h+h/5])
+
+    if h <= 1.00:
+        plt.axis([0, r+r/5, 0, 1])
+    if h > 1.00:
+        plt.axis([0, r+r/5, 0, 50])
+    if h > 50.00:
+        plt.axis([0, r+r/5, 0, 100])
+
     ax.set_autoscale_on(False)
 
     ani = animation.FuncAnimation(
